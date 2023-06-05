@@ -1,4 +1,4 @@
-const apikey = "118accafdd63b2d187a735681bd2a4da"
+const apikey = // So foi retirado por cegurança e so colocar a chave de novo
 
 const weatherDataEl = document.getElementById("weather-date")
 
@@ -24,7 +24,7 @@ async function getWeatherData(cityValue) {
         const temperature = Math.round(data.main.temp)
 
         const description = data.weather[0].description
-        
+
         const icon = data.weather[0].icon
         console.log(icon)
 
@@ -41,7 +41,7 @@ async function getWeatherData(cityValue) {
 
         weatherDataEl.querySelector(".description").textContent = description
 
-        weatherDataEl.querySelector(".details").innerHTML = details.map((detail)=> `<div>${detail}</div>`).join("")
+        weatherDataEl.querySelector(".details").innerHTML = details.map((detail) => `<div>${detail}</div>`).join("")
 
     } catch (error) {
         weatherDataEl.querySelector(".icon").innerHTML = ""
@@ -51,5 +51,5 @@ async function getWeatherData(cityValue) {
         weatherDataEl.querySelector(".description").textContent = "An erro happened, please try again later"
 
         weatherDataEl.querySelector(".details").innerHTML = ""
-     }
+    }
 }
